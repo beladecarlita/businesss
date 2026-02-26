@@ -13,6 +13,8 @@
         .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
         .btn-glow:hover { box-shadow: 0 0 20px rgba(255,255,255,0.3); transition: all 0.3s ease; }
         .gradient-border { border-bottom: 2px solid; border-image: linear-gradient(to right, transparent, #fff, transparent) 1; }
+        input, textarea, select { background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(255,255,255,0.1) !important; color: white !important; }
+        input:focus, textarea:focus { border-color: white !important; outline: none; }
     </style>
 </head>
 <body>
@@ -32,17 +34,15 @@
     <section class="relative h-screen flex items-center justify-center text-center px-6">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-black to-black"></div>
         <div class="relative z-10 max-w-4xl">
-            <img src="logo.png" alt="THEE LUMINARY" class="mx-auto mb-8 w-48 md:w-64 drop-shadow-[0_0_25px_rgba(255,255,255,0.3)]">
-            
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight glow-text">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight glow-text uppercase">
                 Illuminating South Africa’s <br> <span class="text-gray-400">Nightlife & Events Industry</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto font-light">
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
                 Premium talent & promotional staffing agency connecting brands with elite event professionals across Cape Town and Johannesburg.
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#" class="btn-glow bg-white text-black px-8 py-4 rounded-full font-semibold uppercase tracking-wide">Book Talent</a>
-                <a href="#" class="btn-glow border border-white/30 px-8 py-4 rounded-full font-semibold uppercase tracking-wide hover:bg-white/10">Join The Agency</a>
+                <a href="#contact" class="btn-glow bg-white text-black px-8 py-4 rounded-full font-semibold uppercase tracking-wide">Book Talent</a>
+                <a href="#contact" class="btn-glow border border-white/30 px-8 py-4 rounded-full font-semibold uppercase tracking-wide hover:bg-white/10">Join The Agency</a>
             </div>
         </div>
     </section>
@@ -69,7 +69,6 @@
     <section id="services" class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl font-bold mb-16 text-center uppercase tracking-widest">Our Services</h2>
-            
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass-card p-10 rounded-3xl border-white/20">
                     <i data-lucide="briefcase" class="mb-6 text-gray-400"></i>
@@ -81,9 +80,7 @@
                         <li>• VIP & Nightlife Staff</li>
                         <li>• Campaign Representation</li>
                     </ul>
-                    <p class="text-sm italic text-gray-500">Professional, vetted, and brand-aligned talent to enhance your activations.</p>
                 </div>
-
                 <div class="glass-card p-10 rounded-3xl border-white/20">
                     <i data-lucide="star" class="mb-6 text-gray-400"></i>
                     <h3 class="text-2xl font-bold mb-4">For Talent</h3>
@@ -93,7 +90,6 @@
                         <li>• Industry Exposure</li>
                         <li>• Safe & Structured Work Placements</li>
                     </ul>
-                    <p class="text-sm italic text-gray-500">Access premium opportunities in South Africa’s elite event industry.</p>
                 </div>
             </div>
         </div>
@@ -104,49 +100,72 @@
         <div class="flex flex-wrap justify-center gap-12 text-3xl font-light">
             <span class="hover:text-white transition duration-500">CAPE TOWN</span>
             <span class="text-white font-bold">JOHANNESBURG</span>
-            <span class="text-zinc-700">DURBAN (COMING SOON)</span>
+            <span class="text-zinc-700 font-light">DURBAN (COMING SOON)</span>
         </div>
     </section>
 
-    <section class="py-24 px-6 border-t border-white/10">
-        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-            <div class="text-center md:text-left">
-                <h4 class="text-xl font-bold mb-4">Ready to Book?</h4>
-                <p class="text-gray-400 mb-6 text-sm">Elevate your next event with our professional talent.</p>
-                <a href="#" class="inline-block bg-white text-black px-6 py-3 rounded-full text-sm font-bold uppercase tracking-widest">Book Talent</a>
-            </div>
-            <div class="text-center md:text-left">
-                <h4 class="text-xl font-bold mb-4">Ready to Join?</h4>
-                <p class="text-gray-400 mb-6 text-sm">Start your career with the most trusted agency in SA.</p>
-                <a href="#" class="inline-block border border-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Apply Now</a>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="py-12 px-6 border-t border-white/5 bg-black text-gray-500">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+    <section id="contact" class="py-24 px-6 bg-black border-t border-white/10">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
             <div>
-                <h2 class="text-white font-bold mb-4 uppercase">Thee Luminary</h2>
-                <p class="text-sm">For bookings, partnerships, or talent applications, <br>contact us and we will respond promptly.</p>
+                <h3 class="text-2xl font-bold mb-8 uppercase tracking-widest">Book Talent</h3>
+                <form action="YOUR_FORMSPREE_ENDPOINT_HERE" method="POST" class="space-y-6">
+                    <input type="hidden" name="_subject" value="New Booking Inquiry - Thee Luminary">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Company / Name</label>
+                        <input type="text" name="name" required class="w-full p-4 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Email</label>
+                        <input type="email" name="email" required class="w-full p-4 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Message (Event Details)</label>
+                        <textarea name="message" rows="4" required class="w-full p-4 rounded-lg"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-white text-black py-4 font-bold uppercase tracking-widest rounded-full hover:bg-gray-200 transition">Submit Inquiry</button>
+                </form>
             </div>
-            <div class="flex flex-col gap-2 text-sm">
-                <span class="text-white">Socials</span>
-                <a href="https://instagram.com/thee_luminary" class="hover:text-white">Instagram</a>
-                <a href="https://tiktok.com/@thee_luminary" class="hover:text-white">TikTok</a>
-            </div>
-            <div class="flex flex-col gap-2 text-sm">
-                <span class="text-white">Inquiries</span>
-                <span>official-email@example.com</span>
-                <span>CT | JHB</span>
+
+            <div>
+                <h3 class="text-2xl font-bold mb-8 uppercase tracking-widest">Join the Agency</h3>
+                <form action="YOUR_FORMSPREE_ENDPOINT_HERE" method="POST" class="space-y-6">
+                    <input type="hidden" name="_subject" value="New Talent Application - Thee Luminary">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Full Name</label>
+                            <input type="text" name="talent_name" required class="w-full p-4 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Location</label>
+                            <input type="text" name="location" required placeholder="CT or JHB" class="w-full p-4 rounded-lg">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Instagram Handle</label>
+                        <input type="text" name="instagram" required class="w-full p-4 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Brief Bio / Experience</label>
+                        <textarea name="bio" rows="4" required class="w-full p-4 rounded-lg"></textarea>
+                    </div>
+                    <button type="submit" class="w-full border border-white py-4 font-bold uppercase tracking-widest rounded-full hover:bg-white hover:text-black transition">Apply Now</button>
+                </form>
             </div>
         </div>
-        <div class="mt-12 pt-8 border-t border-white/5 text-center text-xs uppercase tracking-[0.3em]">
-            &copy; 2026 Thee Luminary Agency. All Rights Reserved.
+    </section>
+
+    <footer class="py-12 px-6 bg-black text-gray-600 text-center border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-sm font-bold uppercase text-white tracking-widest">Thee Luminary</div>
+            <div class="flex space-x-6">
+                <a href="https://instagram.com/thee_luminary" target="_blank" class="hover:text-white transition">Instagram</a>
+                <a href="https://tiktok.com/@thee_luminary" target="_blank" class="hover:text-white transition">TikTok</a>
+            </div>
+            <p class="text-xs uppercase tracking-widest">&copy; 2026 Thee Luminary Agency. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Initialize Icons
         lucide.createIcons();
     </script>
 </body>

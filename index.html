@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thee Luminary | Elite Talent & Event Staffing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,149 +12,97 @@
         .glow-text { text-shadow: 0 0 15px rgba(255,255,255,0.5); }
         .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
         .btn-glow:hover { box-shadow: 0 0 20px rgba(255,255,255,0.3); transition: all 0.3s ease; }
-        
-        .form-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #000; z-index: 100; display: none;
-            overflow-y: auto; padding: 40px 20px;
-        }
+        .form-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 100; display: none; overflow-y: auto; padding: 40px 20px; }
         .form-overlay.active { display: block; animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
         input, textarea, select { background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(255,255,255,0.1) !important; color: white !important; }
     </style>
 </head>
 <body>
 
-    <div id="main-site">
-        <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-            <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-center md:text-left">
-                <div class="text-xl font-bold tracking-tighter uppercase w-full md:w-auto">Thee Luminary</div>
-                <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-gray-400">
-                    <a href="#about" class="hover:text-white transition">About</a>
-                    <a href="#services" class="hover:text-white transition">Services</a>
-                    <a href="#locations" class="hover:text-white transition">Locations</a>
-                </div>
-            </div>
-        </nav>
+<div id="main-site">
 
-        <section class="relative min-h-screen flex items-center justify-center text-center px-6 pt-24 md:pt-0">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-black to-black"></div>
-            <div class="relative z-10 max-w-4xl w-full">
-                
-                <div class="mb-6 md:mb-10 flex justify-center">
-                    <img src="Logo.png.jpeg" alt="THEE LUMINARY" 
-                         class="mx-auto w-48 md:w-64 h-auto rounded-full drop-shadow-[0_0_25px_rgba(255,255,255,0.3)] object-contain border border-white/10">
-                </div>
-                
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight glow-text uppercase">
-                    Illuminating South Africa’s <br> <span class="text-gray-400">Nightlife & Events</span>
-                </h1>
-                
-                <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                    Cape Town and Johannesburg's premier talent agency, connecting brands with vetted models, hostesses, and elite event specialists.
-                </p>
-                
-                <div class="flex flex-col md:flex-row gap-4 justify-center">
-                    <button onclick="showForm('book-form')" class="btn-glow bg-white text-black px-8 py-4 rounded-full font-semibold uppercase tracking-wide">Book Talent</button>
-                    <button onclick="showForm('apply-form')" class="btn-glow border border-white/30 px-8 py-4 rounded-full font-semibold uppercase tracking-wide hover:bg-white/10 text-white">Join The Agency</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="py-24 px-6 bg-zinc-950">
-            <div class="max-w-5xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-12 uppercase tracking-widest border-b border-white/10 pb-4 inline-block">About Thee Luminary</h2>
-                <p class="text-xl text-gray-300 leading-relaxed">
-                    Thee Luminary is a premium Cape Town and Johannesburg based talent and promotional staffing agency. We specialize in models, video vixens, event hostesses, bottle girls, and brand activation staff.
-                </p>
-            </div>
-        </section>
-
-        <section id="services" class="py-24 px-6">
-            <div class="max-w-7xl mx-auto">
-                <h2 class="text-3xl font-bold mb-16 text-center uppercase tracking-widest">Our Services</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="glass-card p-10 rounded-3xl">
-                        <h3 class="text-2xl font-bold mb-4 uppercase">For Brands</h3>
-                        <p class="text-gray-400 mb-6">Professional, vetted, and brand-aligned talent to enhance your events and brand activations.</p>
-                        <button onclick="showForm('book-form')" class="text-white underline text-sm uppercase tracking-widest">Book Now</button>
-                    </div>
-                    <div class="glass-card p-10 rounded-3xl">
-                        <h3 class="text-2xl font-bold mb-4 uppercase">For Talent</h3>
-                        <p class="text-gray-400 mb-6">Join Thee Luminary to access premium opportunities and professional representation.</p>
-                        <button onclick="showForm('apply-form')" class="text-white underline text-sm uppercase tracking-widest">Apply Now</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="locations" class="py-20 bg-zinc-950 text-center">
-            <h2 class="text-2xl font-bold mb-8 uppercase tracking-widest text-gray-500">Our Hubs</h2>
-            <div class="flex flex-wrap justify-center gap-12 text-3xl font-light">
-                <span>CAPE TOWN</span>
-                <span class="text-white font-bold">JOHANNESBURG</span>
-                <span class="text-zinc-700">DURBAN</span>
-            </div>
-        </section>
-
-        <footer class="py-12 bg-black border-t border-white/10 text-center">
-            <div class="flex justify-center gap-8 mb-6">
-                <a href="https://www.tiktok.com/@thee.luminary?_r=1&_t=ZS-94GipGfJmlx" target="_blank" class="text-gray-400 hover:text-white flex items-center gap-2">
-                    <i data-lucide="video" class="w-5 h-5"></i> <span class="text-xs uppercase tracking-widest">TikTok</span>
-                </a>
-                <a href="https://instagram.com/thee_luminary" target="_blank" class="text-gray-400 hover:text-white flex items-center gap-2">
-                    <i data-lucide="instagram" class="w-5 h-5"></i> <span class="text-xs uppercase tracking-widest">Instagram</span>
-                </a>
-            </div>
-            <a href="mailto:Theeluminaryagency@gmail.com" class="text-xs text-gray-500 tracking-widest hover:text-white underline">Theeluminaryagency@gmail.com</a>
-        </footer>
+<nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold uppercase">Thee Luminary</div>
     </div>
+</nav>
 
-    <div id="book-form" class="form-overlay">
-        <div class="max-w-md mx-auto">
-            <button onclick="hideForm('book-form')" class="text-gray-500 mb-8 uppercase tracking-widest text-xs">← Back to Site</button>
-            <h2 class="text-3xl font-bold mb-2 uppercase">Book Talent</h2>
-            <p class="text-gray-400 mb-8 text-sm">Partner with SA's elite talent agency.</p>
-            <form action="PASTE_YOUR_FORMSPREE_URL_HERE" method="POST" class="space-y-6">
-                <input type="text" name="brand" placeholder="Company Name" required class="w-full p-4 rounded-xl">
-                <input type="email" name="email" placeholder="Work Email" required class="w-full p-4 rounded-xl">
-                <textarea name="details" rows="4" placeholder="Event Details (Date, Location, Talent Needed)" required class="w-full p-4 rounded-xl"></textarea>
-                <button type="submit" class="w-full bg-white text-black py-4 font-bold uppercase tracking-widest rounded-full">Submit Request</button>
-            </form>
+<section class="relative min-h-screen flex items-center justify-center text-center px-6 pt-24">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-black to-black"></div>
+    <div class="relative z-10 max-w-4xl w-full">
+
+        <img src="Logo.png.jpeg" class="mx-auto w-56 mb-8 rounded-full border border-white/10">
+
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 glow-text uppercase">
+            Illuminating South Africa’s <br>
+            <span class="text-gray-400">Nightlife & Events</span>
+        </h1>
+
+        <p class="text-lg text-gray-200 mb-10 max-w-2xl mx-auto font-light">
+            Cape Town and Johannesburg's premier talent agency connecting brands with elite event specialists.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <button onclick="showForm('book-form')" class="btn-glow bg-white text-black px-8 py-4 rounded-full font-semibold uppercase">Book Talent</button>
+            <button onclick="showForm('apply-form')" class="btn-glow border border-white px-8 py-4 rounded-full font-semibold uppercase">Join The Agency</button>
         </div>
     </div>
+</section>
 
-    <div id="apply-form" class="form-overlay">
-        <div class="max-w-md mx-auto">
-            <button onclick="hideForm('apply-form')" class="text-gray-500 mb-8 uppercase tracking-widest text-xs">← Back to Site</button>
-            <h2 class="text-3xl font-bold mb-2 uppercase">Apply to Join</h2>
-            <p class="text-gray-400 mb-8 text-sm">Real opportunities and industry exposure.</p>
-            <form action="PASTE_YOUR_FORMSPREE_URL_HERE" method="POST" class="space-y-6">
-                <input type="text" name="name" placeholder="Full Name" required class="w-full p-4 rounded-xl">
-                <input type="text" name="instagram" placeholder="Instagram Handle (@)" required class="w-full p-4 rounded-xl">
-                <select name="location" class="w-full p-4 rounded-xl">
-                    <option>Cape Town</option>
-                    <option>Johannesburg</option>
-                    <option>Durban</option>
-                </select>
-                <textarea name="bio" rows="3" placeholder="Experience..." required class="w-full p-4 rounded-xl"></textarea>
-                <button type="submit" class="w-full border border-white text-white py-4 font-bold uppercase tracking-widest rounded-full">Apply Now</button>
-            </form>
+<section id="about" class="py-24 px-6 bg-zinc-950">
+    <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-12 uppercase tracking-widest">About Thee Luminary</h2>
+        <p class="text-lg text-gray-300 leading-relaxed">
+            We are a premium, Cape Town and Johannesburg based talent and promotional staffing agency, specializing in models, video vixens, event hostesses, bottle girls, promoters, and brand activations. 
+            Launched recently we are on a mission to professionalize South Africa’s nightlife and events sector by providing vetted, empowered, and brand-safe talent to top clients like liquor brands, nightclubs, music producers, and event companies. 
+            Our goal? To become the go-to agency illuminating Cape Town, Johannesburg (and soon Durban) while creating sustainable careers and opportunities for young creatives — empowering you to shine while driving real impact in the R121 billion events industry!
+        </p>
+    </div>
+</section>
+
+<section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-12 uppercase tracking-widest">Brands We've Worked With</h2>
+        <div class="flex flex-wrap justify-center gap-10 text-lg text-gray-300">
+            <span>Room13</span>
+            <span>The Concept Bar</span>
+            <span>Savage Lounge</span>
+            <span>Netflix</span>
+            <span>Showmax</span>
         </div>
     </div>
+</section>
 
-    <script>
-        lucide.createIcons();
-        function showForm(id) {
-            document.getElementById(id).classList.add('active');
-            document.getElementById('main-site').style.display = 'none';
-            window.scrollTo(0,0);
-        }
-        function hideForm(id) {
-            document.getElementById(id).classList.remove('active');
-            document.getElementById('main-site').style.display = 'block';
-        }
-    </script>
+<footer class="py-12 bg-black border-t border-white/10 text-center">
+    <div class="mb-4">
+        <a href="https://wa.me/27635764730" target="_blank" class="text-white underline">
+            WhatsApp: 063 576 4730
+        </a>
+    </div>
+    <div class="flex justify-center gap-8 mb-4">
+        <a href="https://instagram.com/thee_luminary" target="_blank" class="text-gray-400 hover:text-white">Instagram</a>
+        <a href="https://www.tiktok.com/@thee.luminary" target="_blank" class="text-gray-400 hover:text-white">TikTok</a>
+    </div>
+    <a href="mailto:Theeluminaryagency@gmail.com" class="text-xs text-gray-500 underline">
+        Theeluminaryagency@gmail.com
+    </a>
+</footer>
+
+</div>
+
+<script>
+    lucide.createIcons();
+    function showForm(id) {
+        document.getElementById(id).classList.add('active');
+        document.getElementById('main-site').style.display = 'none';
+        window.scrollTo(0,0);
+    }
+    function hideForm(id) {
+        document.getElementById(id).classList.remove('active');
+        document.getElementById('main-site').style.display = 'block';
+    }
+</script>
+
 </body>
 </html>
